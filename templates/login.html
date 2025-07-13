@@ -1,0 +1,38 @@
+    {% extends "base.html" %}
+    {% block login %}
+    <div class="deda">
+        <form method="post">
+            {{ form.hidden_tag() }}
+        <div class="leftside">
+            <img class="logo" src="/static/images/logo.png" alt="logo">
+            <h1 class="tit">შესვლა</h1>
+            
+            <div class="forms">
+            <label for="email">ელფოსტა</label>
+            <div class="email">
+                {{ form.email(class="ema", placeholder="სახელი@email.com") }}
+                <img class="im" src="/static/images/@.png" alt="@">
+            </div>
+            <label for="password">პაროლი</label>
+            <div class="password">
+                {{ form.password(class="pass", placeholder="8+ სიმბოლო, 1 დიდი ასო") }}
+                <img class="imlo" src="/static/images/lock.png" alt="lock">
+            </div>
+
+            
+            </div>
+            <input class="check" type="checkbox">
+
+            <p class="cht">წავიკითხე და ვეთანხმები მომსახურების პირობებს და <br> ჩვენს კონფიდენციალურობის პოლიტიკას</p>
+
+            {{ form.submit(class="reg") }}
+            <p class="for">არ გაქვთ ანგარიში?<a class="Sign" href="/signup">Sign Up</a></p>
+        </div>
+        </form>
+        <div class="imgback">
+            <img class="banner" src="/static/images/image.png" alt="banner">
+        </div>
+            
+    </div>
+    
+    {% endblock %}

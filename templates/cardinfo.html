@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block card %}
+  <div class="container">
+    <div class="cards">
+      <img class="cardimg" src="/static/images/{{ newss.img }}">
+      <h2 class="cardname">{{ newss.title }}</h2>
+      <p class="cardinfo">{{ newss.text }}</p>
+
+    </div>
+    
+    <a href="/"><button class="cardbtn">უკან დაბრუნება</button></a>
+    
+  </div>
+  {% if current_user.is_authenticated and current_user.is_admin %}
+  <a class="delete-btn" href="{{ url_for('delete_news', id=newss.id) }}">
+  <button class="deletebtn" onclick="return confirm('დარწმუნებული ხარ რომ გსურს წაშლა?')">წაშლა</button>
+</a>
+  {% endif %}
+  
+{% endblock %}

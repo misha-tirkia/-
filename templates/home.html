@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block home %}
+{% if current_user.is_authenticated and current_user.is_admin %}
+    <a href="/addnews"><button class="addnews">add news</button></a>
+{% endif %}
+  
+  <div class="container">
+    {% for newss in news %}
+    <div class="card">
+      <div class="image">
+        <img class="cardimga" src="/static/images/{{ newss.img }}" alt="news image">
+      </div>
+      <div class="content">
+        <span class="title">
+          {{ newss.title }}
+
+        </span>
+        <a class="action" href="/cardinfo/{{ newss.id }}">
+          view
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

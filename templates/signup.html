@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+    {% block signup %}
+   <div class="deda">
+        <form method="post">
+            {{ form.hidden_tag() }}
+        <div class="leftside">
+            <img class="logo" src="/static/images/logo.png" alt="logo">
+            <h1 class="tit">რეგისტრაცია</h1>
+            
+            <div class="forms">
+            <label for="username">მომხმარებლის სახელი</label>
+            <div class="name">
+                {{ form.username(class="username", placeholder="სახელი") }}
+            </div>
+
+            <label for="email">ელფოსტა</label>
+            <div class="email">
+                {{ form.email(class="ema", placeholder="სახელი@email.com") }}
+                <img class="im" src="/static/images/@.png" alt="@">
+            </div>
+            <label for="password">პაროლი</label>
+            <div class="password">
+                {{ form.password(class="pass", placeholder="8+ სიმბოლო, 1 დიდი ასო") }}
+                <img class="imlo" src="/static/images/lock.png" alt="lock">
+            </div>
+            
+            
+            </div>
+            <input class="check" name="agree" type="checkbox">
+            <p class="cht">წავიკითხე და ვეთანხმები მომსახურების პირობებს და <br> ჩვენს კონფიდენციალურობის პოლიტიკას</p>
+
+            {{ form.submit(class="reg") }}
+            <p class="for">უკვე გაქვთ ანგარიში?<a class="Sign" href="/login">Login</a></p>
+        </div>
+        
+        </form>
+        <div class="imgback">
+            <img class="banner" src="/static/images/image.png" alt="banner">
+        </div>
+    </div>
+
+    {% endblock %}

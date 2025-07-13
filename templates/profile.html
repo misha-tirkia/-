@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block profile %}
+
+<div class="container">
+    <div class="profin"><h1 class="name">name:{{ current_user.username }}</h1>
+  <h1 class="email">email:{{ current_user.email }}
+  </h1><a href="/logout"><button class="logout">გამოსვლა</button></a>
+</div>
+
+
+    
+</div>
+
+{% endblock %}

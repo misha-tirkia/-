@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block addnews %}
+    <form method="POST" enctype="multipart/form-data">
+  {{ addnews.hidden_tag() }}
+  <div class="container">
+    <a href="/"><button class="cardbtn">უკან დაბრუნება</button></a>
+    <div class="addcon">
+      {{ addnews.submit(class="addbtn") }}
+      {{ addnews.title(class="newstitle", placeholder="სათაური") }}
+      {{ addnews.text(class="newstext", placeholder="დეტალური ინფორმაცია") }}
+      {{ addnews.img(class="newsimg") }}
+    </div>
+  </div>
+</form>
+
+  
+{% endblock %}

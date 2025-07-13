@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/images/weblogo.png">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Black.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-BlackItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Bold.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-BoldItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-ExtraBold.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-ExtraBoldItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-ExtraLight.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-ExtraLightItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Italic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Light.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-LightItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Medium.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-MediumItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Regular.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-SemiBold.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-SemiBoldItalic.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-Thin.ttf">
+    <link rel="stylesheet" href="/static/fonts/poppins/Poppins-ThinItalic.ttf">
+    <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/bpg-nino-mtavruli/css/bpg-nino-mtavruli.min.css">
+    <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/bpg-nino-mtavruli/css/bpg-nino-mtavruli.min.css">
+    <title>ზენიუსი</title>
+</head>
+<body>
+    <nav class="navbar">
+  <a href="/home">
+    <img class="navlogo" src="/static/images/weblogo.png" alt="img" />
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+
+  <ul class="nav-links">
+    <li><a href="/home">მთავარი</a></li>
+    <li><a href="/about">ჩემ შესახებ</a></li>
+    <li><a href="/contact">კონტაქტი</a></li>
+    {% if not current_user.is_authenticated %}
+    <li><a href="/signup">რეგისტრაცია</a></li>
+    <li><a href="/login">შესვლა</a></li>
+    {% endif %}
+  </ul>
+  <a href="/profile" class="profile-link">
+    <img class="iconprof" src="/static/images/iconprofile.png" alt="icon" />
+  </a>
+</nav>
+<script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    </script>
+
+    {% block contact %}
+
+    {% endblock %}
+
+    {% block home %}
+
+    {% endblock %}
+
+    {% block signup %}
+
+    {% endblock %}
+
+    {% block login %}
+
+    {% endblock %}
+
+    {% block about %}
+
+    {% endblock %}
+
+    {% block card %}
+
+    {% endblock %}
+
+    {% block addnews %} 
+  
+    {% endblock %}
+
+    {% block profile %}
+    {% endblock %}
+
+
+
+
+</body>
+</html> 
