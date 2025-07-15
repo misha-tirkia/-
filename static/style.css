@@ -225,8 +225,8 @@ textarea:focus {
     height: 608px;
     width: 1000px;
     display: flex;
-    position: relative;  /* შეცვალე absolute -> relative */
-    margin: 100px auto;   /* ასე ზემოდან ადგილი დაიჭრება და navbar აღარ დაიფარება */
+    position: relative;
+    margin: 100px auto;  
     background-color: #F6F6F6;
     border-radius: 30px;
 }
@@ -704,16 +704,53 @@ label {
 
 }
 
-.profin {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.profin h1 {
+    font-size: 20px;
+    margin: 12px 0;
+    font-weight: 400;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
 }
 
+.profin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.name {
+    color: black;
+}
+
+.email {
+    color: black;
+}
+
+.logout {
+    margin-top: 25px;
+    background: #64ffda;
+    color: #000;
+    border: none;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.logout:hover {
+    background: #26ffe6;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(38,255,230,0.5);
+}
+
+.logout:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
 .logout {
     height: 40px;
     width: 100px;
@@ -917,6 +954,8 @@ label {
     .conemail {
         font-size: 16px;
     }
+
+    
 }
 
 @media (max-width: 480px) {
@@ -945,10 +984,14 @@ label {
     }
 
     .rightside input {
-        width: 100%;
+        width: 90%;
         margin-left: 0;
         height: 35px;
         font-size: 14px;
+    }
+
+    .rightside {
+        width: 80%;
     }
 
     .send {
@@ -996,6 +1039,10 @@ label {
         display: block;
         width: 100%;
         margin: 10px auto;
+    }
+
+    .rightside {
+        width: 80%;
     }
 }
 
