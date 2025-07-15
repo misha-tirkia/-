@@ -4,8 +4,9 @@
 
 <div class="container">
     <div class="profin"><h1 class="name">name:{{ current_user.username }}</h1>
-  <h1 class="email">email:{{ current_user.email }}
+  {% if current_user.is_authenticated and current_user.is_admin %}
   </h1><a href="/logout"><button class="logout">გამოსვლა</button></a>
+  {% endif %}
 </div>
 
 
