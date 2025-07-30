@@ -13,6 +13,10 @@ UPLOAD_FOLDER = path.join(app.root_path, "static/images")
 @app.route('/addnews', methods=["GET", "POST"])
 def addnew():
     addnews = addform()
+    if (not current_user.is_authenticated or 
+    not current_user.is_admin):
+         return redirect(url_for('home'))
+    
     if addnews.validate_on_submit():
 
 
